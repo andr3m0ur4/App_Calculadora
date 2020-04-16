@@ -16,7 +16,9 @@
 		// getter e setter
 		public function __set($atributo, $valor)
 		{
-			$this -> $atributo = $valor;
+			if (is_numeric($valor)) {
+				$this -> $atributo = $valor;
+			}
 		}
 
 		public function somar()
@@ -39,8 +41,8 @@
 			$this -> total = $this -> numero1 / $this -> numero2;
 		}
 
-		public function getTotal()
+		public function __get($atributo)
 		{
-			return $this -> total;
+			return $this -> $atributo;
 		}
 	}

@@ -29,4 +29,4 @@
 			break;
 	}
 
-	echo $calculadora -> getTotal();
+	header("Location: ./index.html?{$calculadora -> __get('total')}");
